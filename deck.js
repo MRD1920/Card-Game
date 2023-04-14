@@ -1,31 +1,22 @@
-import Card from "./card";
-import { RANKS, SUITS } from "./cardinfo";
-//const shuffle = require("lodash/shuffle");
+import Card from "./card.js";
+import { RANKS, SUITS } from "./cardinfo.js";
 
 export default class Deck {
   constructor() {
     this.cards = [];
-    for (const rank in RANKS) {
-      for (const suit in SUITS) {
+    for (const rank of RANKS) {
+      for (const suit of SUITS) {
         this.cards.push(new Card(rank, suit));
       }
     }
-    this.cards = shuffle(this.cards);
+    this.shuffle();
   }
 
-  shuffle(cards) {
-    let currentIndex = cards.length,
-      randomIdx;
-    while (currentIndex != 0) {
-      randomIdx = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      // now swap them
-      [cards[currentIndex], cards[randomIdx]] = [
-        cards[randomIdx],
-        cards[currentIndex],
-      ];
+  shuffle() {
+    for (let i = this.cards.length - 1; i >= 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
     }
-    return this.shuffle;
   }
 
   deal(numCards) {
