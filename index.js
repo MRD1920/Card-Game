@@ -1,12 +1,8 @@
-// import Game from "./game";
+import { Game } from "./game.js";
+import promptSync from "prompt-sync";
+const prompt = promptSync();
 
-// let numPlayers = prompt(`Enter the number of Player to play the game`);
-// console.log(`\n Starting the game for ${numPlayers} Players `);
-
-// const game = new Game(numPlayers);
-// game.play();
-import { Game } from "./game";
-
-const numPlayers = 4;
+// Enter the number of players before starting the game here
+const numPlayers = prompt("Enter the number of players \n");
 const game = new Game(numPlayers);
 game.play();
