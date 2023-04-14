@@ -34,27 +34,26 @@ export class Game {
       console.log(`InHand Cards: ${player.getHand().join(", ")}`);
 
       const validPlay = player.getValidPlay(this.discardPile);
-      console.log(validPlay);
-      //const validPlayablesPos = player.getValidPlayablesPos(this.discardPile);
 
       if (validPlay) {
         //console.log(`Valid play: ${validPlay}`);
         console.log(
           "There is a valid play possible for the cards in your hand.. Play one card from your hand\n"
         );
-        // assuming user always enters the position of a valid card to play
+        // assuming user always enters the position of a valid card to play (1 based indexing)
         const userPlayPos = prompt(
           "Enter the position of the card u want to play from your hand : - "
         );
 
         const userPlay = player.getCardAtPos(userPlayPos);
-        console.log(userPlay);
+        //console.log(userPlay);
 
         player.play(userPlay, this.discardPile);
         if (player.getHandSize() === 0) {
           this.winner = player;
         } else {
-          switch (userPlay[0]) {
+          //console.log(userPlay.rank);
+          switch (userPlay.rank) {
             case "ace":
               console.log("Skipping next player");
               this.currentPlayer = this.getNextPlayer(2);
