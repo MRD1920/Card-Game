@@ -1,5 +1,5 @@
 // Define the card ranks, suits, and values
-const RANKS = [
+export const RANKS = [
   "2",
   "3",
   "4",
@@ -9,13 +9,13 @@ const RANKS = [
   "8",
   "9",
   "10",
-  "J",
-  "Q",
-  "K",
-  "A",
+  "jack",
+  "queen",
+  "king",
+  "ace",
 ];
-const SUITS = ["C", "D", "H", "S"];
-const VALUES = {
+export const SUITS = ["clubs", "diamonds", "hearts", "Spades"];
+export const VALUES = {
   2: 2,
   3: 3,
   4: 4,
@@ -25,9 +25,8 @@ const VALUES = {
   8: 8,
   9: 9,
   10: 10,
-  J: 11,
-  Q: 12,
-  K: 13,
-  A: 14,
+  jack: 11,
+  queen: 12,
+  king: 13,
+  ace: 14,
 };
-module.exports = { RANKS, SUITS, VALUES };
