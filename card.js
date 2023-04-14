@@ -1,4 +1,5 @@
-import { VALUES } from "./cardinfo";
+// const VALUES = require("./cardinfo.js");
+import { VALUES } from "./cardinfo.js";
 
 export default class Card {
   constructor(rank, suit) {
@@ -7,6 +8,6 @@ export default class Card {
     this.value = VALUES[rank];
   }
   toString() {
-    return this.rank + this.suit;
+    return this.rank + " of " + this.suit;
   }
 }

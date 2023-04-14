@@ -31,6 +31,26 @@ export default class Player {
     }
     return null;
   }
+
+  getValidPlayablesPos() {
+    let validPlayablesPos = [];
+    let i = 0;
+    for (let card of this.hand) {
+      if (
+        card.rank === discardPile[discardPile.length - 1].rank ||
+        card.suit === discardPile[discardPile.length - 1].suit
+      ) {
+        validPlayablesPos.push(i);
+      }
+      i++;
+    }
+    return validPlayables;
+  }
+
+  getCardAtPos(pos) {
+    return this.hand[pos - 1];
+  }
+
   hasCards() {
     return this.hand.length > 0;
   }
