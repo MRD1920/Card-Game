@@ -34,6 +34,7 @@ export class Game {
       console.log(`InHand Cards: ${player.getHand().join(", ")}`);
 
       const validPlay = player.getValidPlay(this.discardPile);
+      console.log(validPlay);
       //const validPlayablesPos = player.getValidPlayablesPos(this.discardPile);
 
       if (validPlay) {
@@ -47,6 +48,7 @@ export class Game {
         );
 
         const userPlay = player.getCardAtPos(userPlayPos);
+        console.log(userPlay);
 
         player.play(userPlay, this.discardPile);
         if (player.getHandSize() === 0) {

@@ -44,7 +44,7 @@ export default class Player {
       }
       i++;
     }
-    return validPlayables;
+    return validPlayablesPos;
   }
 
   getCardAtPos(pos) {
