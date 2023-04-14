@@ -3,7 +3,7 @@ export default class Player {
     this.name = name;
     this.hand = [];
   }
-  draw(deck, numsCards) {
+  draw(numsCards, deck) {
     this.hand = this.hand.concat(deck.deal(numsCards));
   }
 
@@ -33,6 +33,10 @@ export default class Player {
   }
   hasCards() {
     return this.hand.length > 0;
+  }
+
+  getHandSize() {
+    return this.hand.length;
   }
 
   getHand() {
